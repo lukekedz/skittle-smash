@@ -21,7 +21,7 @@ class Smash extends Component {
       case 2: 
         return 'One more flavor to select!!'
       case 3:
-        return 'Ready to FLAVOR SMASH?!'
+        return 'Ready to Skittle Smash?!'
     }
   }
 

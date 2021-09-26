@@ -4,7 +4,7 @@ class Header extends Component {
   render() {
     return(
       <header className="header">
-        <div>Skittle Smash!</div>
+        <div>Skittle Smash</div>
       </header>
     );
   }
