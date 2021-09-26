@@ -27,6 +27,7 @@
 
 #message {
   float: none;
+  font-size: calc(10px + 1vmin);
 }
 
 .flavor-theme-title {
@@ -43,20 +44,20 @@
 }
 
 .unselected {
-  background: #fff;
-  border: 1px solid #f84342;
   border-radius: 50%;
   height: 20px;
   margin: 2px;
+  margin-right: 10px;
+  padding: 2px;
   width: 20px;
 }
 
 .selected {
-  background: #fff;
-  border: 1px solid #f84342;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px #f84342;
+  box-shadow: 0 0 5px 5px #dcdcdc;
   height: 20px;
   margin: 2px;
+  margin-right: 10px;
+  padding: 2px;
   width: 20px;
 }

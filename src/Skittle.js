@@ -6,6 +6,10 @@ class Skittle extends Component {
     return(
       <button
         className={this.props.className}
+        style={{
+          background: `${this.props.color}`, 
+          border: `1px solid ${this.props.color}`
+        }}
         onClick={() => this.props.onClick()}
       >
       </button>

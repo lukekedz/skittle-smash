@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Selected from './Selected.js';
 import Skittle from './Skittle.js';
+import original from './data/original.js';
 
 class Smash extends Component {
   constructor (props) {
@@ -8,7 +9,7 @@ class Smash extends Component {
     this.state = {
       message: this.dynamicMessage(0),
       selected: [],
-      skittles: Array(5).fill('unselected'),
+      skittles: original,
     };
   }
 
@@ -27,7 +28,8 @@ class Smash extends Component {
 
   selectSkittle(i) {
     const selected = this.state.selected.slice();
-    const clickedSkittleIndex = selected.indexOf(i);
+    const flavor = this.state.skittles[i].flavor
+    const clickedSkittleIndex = selected.indexOf(flavor);
     
     const threeSelected = this.threeSelections(selected, clickedSkittleIndex)
     if (threeSelected) { return }
@@ -35,11 +37,11 @@ class Smash extends Component {
     if (clickedSkittleIndex > -1) {
       selected.splice(clickedSkittleIndex, 1);
     } else {
-      selected.push(i)
+      selected.push(flavor)
     }
 
     const skittles = this.state.skittles.slice();
-    skittles[i] = this.updateClass(i);
+    skittles[i].class = this.updateClass(i);
 
     const message = this.dynamicMessage(selected.length)
 
@@ -51,9 +53,12 @@ class Smash extends Component {
   }
 
   renderSkittle(i) {
+    const className = this.state.skittles[i].class
+    const color = this.state.skittles[i].color
     return (
       <Skittle
-        className={this.state.skittles[i]}
+        className={className}
+        color={color}
         onClick={() => this.selectSkittle(i)}
       />
     );
@@ -65,7 +70,7 @@ class Smash extends Component {
   }
 
   updateClass(i) {
-    let updatedClass = this.state.skittles[i] === 'selected' ? 'unselected' : 'selected';
+    let updatedClass = this.state.skittles[i].class === 'selected' ? 'unselected' : 'selected';
 
     return updatedClass;
   }
