@@ -4,7 +4,7 @@ import Smash from './Smash.js';
 
 function App() {
   return (
-    <div className="App">
+    <div className="base">
       <Header />
       <Smash />
     </div>
