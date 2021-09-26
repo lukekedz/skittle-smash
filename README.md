@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run inside a Docker container or npm:
 
 ### `Docker`
-docker build -t skittle_smash .
+docker build -t skittle_smash .\
 docker run -it --rm --name skittle_smash -p 3001:3000 skittle_smash 
 
 ### `npm start`
