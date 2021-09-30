@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
+
 import Selected from './Selected.js';
 import Skittle from './Skittle.js';
+
 import original from './data/original.js';
 
 class Smash extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      message: this.dynamicMessage(0),
+      info: this.dynamicInfo(0),
       selected: [],
       skittles: original,
     };
   }
 
-  dynamicMessage(i) {
+  dynamicInfo(i) {
     switch(i) {
       case 0:
         return 'Select up to 3 flavors.'
@@ -43,10 +45,10 @@ class Smash extends Component {
     const skittles = this.state.skittles.slice();
     skittles[i].class = this.updateClass(i);
 
-    const message = this.dynamicMessage(selected.length)
+    const info = this.dynamicInfo(selected.length)
 
     this.setState({
-      message: message,
+      info: info,
       selected: selected,
       skittles: skittles,
     });
@@ -77,24 +79,20 @@ class Smash extends Component {
 
   render() {
     return(
-      <div className="smash">
-        <div className="board-row" id="message">
-          <div>{this.state.message}</div>
+      <div>
+        <div className="info">
+          {this.state.info}
         </div>
-        <div className="board-row">
-          <Selected selected={this.state.selected}/>
-        </div>
-        <div className="board-row">
-          <div className="flavor-theme-title">
-            <p>original</p>
-          </div>
-          <div className="flavors">
+        <Selected selected={this.state.selected}/>
+        <div>
+          <ul className="flavors">
+            <li className="bag-name">original</li>
             {this.renderSkittle(0)}
             {this.renderSkittle(1)}
             {this.renderSkittle(2)}
             {this.renderSkittle(3)}
             {this.renderSkittle(4)}
-          </div>
+          </ul>
         </div>
       </div>
     );
