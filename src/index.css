@@ -5,10 +5,9 @@
   flex-flow: column wrap;
   font-size: calc(12px + 1vmin);
   justify-content: center;
-  text-align: center;
-
-  width: 80%;
   margin: auto;
+  text-align: center;
+  width: 80%;
 }
 
 .header {
@@ -16,8 +15,10 @@
 }
 
 .info {
+  border: 1px green solid;
+
   font-size: calc(8px + 1vmin);
-  padding: 10px;
+  padding-top: 10px;
 }
 
 .flavors {

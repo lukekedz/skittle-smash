@@ -1,0 +1,16 @@
+.selected-flavors {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  list-style: none;
+  margin: auto;
+  padding: 20px;
+}
+
+.square {
+  border: 1px black solid;
+  
+  height: calc(50px + 1vmin);
+  font-size: calc(5px + 1vmin);
+  width: calc(50px + 1vmin);
+}
